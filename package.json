@@ -1,8 +1,8 @@
 {
     "name": "ic-toolbox",
     "displayName": "IC-Toolbox",
-    "description": "",
-    "version": "0.0.1",
+    "description": "集成电路（Integrated Circuit，IC）设计流程工具箱",
+    "version": "1.0.0",
     "engines": {
         "vscode": "^1.88.0"
     },
@@ -12,10 +12,29 @@
     "activationEvents": [],
     "main": "./extension.js",
     "contributes": {
-        "commands": [{
-            "command": "ic-toolbox.helloWorld",
-            "title": "Hello World"
-        }]
+        "commands": [
+            {
+                "command": "ic-toolbox.helloWorld",
+                "title": "Hello World"
+            }
+        ],
+        "keybindings": [
+            {
+                "command": "ic-toolbox.helloWorld",
+                "key": "ctrl+f10",
+                "mac": "cmd+f10",
+                "when": "editorTextFocus"
+            }
+        ],
+        "menus": {
+            "editor/content": [
+                {
+                    "when": "editorFocus",
+                    "command": "ic-toolbox.helloWorld",
+                    "group": "navigation"
+                }
+            ]
+        }
     },
     "scripts": {
         "lint": "eslint .",
